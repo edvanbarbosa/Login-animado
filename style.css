@@ -1,0 +1,166 @@
+@charset "UTF-08";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+main{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+main::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#302e2eb2,blueviolet,#302e2eb2);
+    animation: 5s animate linear infinite;
+}
+.signin{
+    position: absolute;
+    width: 400px;
+    background-color: #222;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+}
+
+.signin .content{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+h2{
+    font-size: 2em;
+    color: blueviolet;
+    text-transform: uppercase;
+}
+form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 25px;
+}
+.inputBx >input{
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 1em;
+}
+label{
+    position:absolute;
+    left: 0;
+    padding: 15px 10px;
+    font-style: normal;
+    color: #aaa;
+    pointer-events: none;
+}
+.inputBx >input:valid ~ label,
+.inputBx >input:focus ~ label{
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: white;
+}
+.links{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:nth-child(2){
+    color: blueviolet;
+    font-weight: 600;
+}
+
+input[type="submit"]{
+    padding: 10px;
+    width: 100%;
+    background: blueviolet;
+    border: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s;
+    
+
+}
+input[type="submit"]:hover{
+    letter-spacing: 5px;
+}
+span{
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background-color: #181818;
+    z-index: 2;
+    transition: 1.5s;
+    
+}
+span:hover{
+   background: blueviolet;
+   transition: 0s;
+}
+
+@media screen and (max-width: 600px){
+    span{
+        width: calc(14.20vw - 2px);
+        height: calc(14.20vw - 2px);
+    }
+}
+@media screen and (max-width: 850px){
+    span{
+        width: calc(12.50vw - 2px);
+        height: calc(12.50vw - 2px);
+    }
+}
+@keyframes animate {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
